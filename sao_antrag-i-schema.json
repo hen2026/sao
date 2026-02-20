@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft/2026-02/schema",
-  "$id": "https://github.com/hen2026/sao/blob/main/sao_antrag-i-schema.json",
+  "$id": "https://raw.githubusercontent.com/hen2026/sao/refs/heads/main/sao_antrag-i-schema.json",
   "$ref": "#/definitions/SaoAntragISchema1",
   "definitions": {
     "SaoAntragISchema1": {
