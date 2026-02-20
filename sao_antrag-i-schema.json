@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft/2026-02/schema",
   "$id": "https://raw.githubusercontent.com/hen2026/sao/refs/heads/main/sao_antrag-i-schema.json",
-  "$ref": "#/definitions/SaoAntragISchema1",
+  "$ref": "#/definitions/SaoAntragISchema",
   "definitions": {
-    "SaoAntragISchema1": {
+    "SaoAntragISchema": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -23,7 +23,7 @@
         "daten",
         "eingereichtAm"
       ],
-      "title": "SaoAntragISchema1"
+      "title": "SaoAntragISchema"
     },
     "Daten": {
       "type": "object",
