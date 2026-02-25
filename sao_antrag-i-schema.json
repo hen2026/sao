@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/hen2026/sao/main/sao_antrag-i-schema.json",
   "type": "object",
-  "additionalProperties": false,
+  "additionalProperties": true,
   "properties": {
     "DF-PSB1-01": { "type": "string" },
     "DF-PSB1-02": { "type": "string" },
