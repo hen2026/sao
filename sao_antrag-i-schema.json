@@ -1,65 +1,38 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/hen2026/sao/main/sao_antrag-i-schema.json",
-  "$ref": "#/definitions/SaoAntragISchema",
-  "definitions": {
+  "$ref": "#/$defs/SaoAntragISchema",
+  "$defs": {
     "SaoAntragISchema": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "antragId": {
-          "type": "string"
-        },
-        "eingereichtAm": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "daten": {
-          "$ref": "#/definitions/Daten"
-        }
+        "antragId": { "type": "string" },
+        "eingereichtAm": { "type": "string", "format": "date-time" },
+        "daten": { "$ref": "#/$defs/Daten" }
       },
-      "required": [
-        "antragId",
-        "daten",
-        "eingereichtAm"
-      ],
+      "required": ["antragId", "daten", "eingereichtAm"],
       "title": "SaoAntragISchema"
     },
+
     "Daten": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "DFG-PSB1": {
-          "$ref": "#/definitions/DfgPsb1"
-        },
-        "DFG-ADRESSE": {
-          "$ref": "#/definitions/DfgAdresse"
-        },
-        "DFG-KONTAKT": {
-          "$ref": "#/definitions/DfgKontakt"
-        },
-        "DFG-KIND": {
-          "$ref": "#/definitions/DfgKind"
-        },
-        "DFG-KIND-ADRESSE": {
-          "$ref": "#/definitions/DfgKindAdresse"
-        },
-        "DFG-SORGERECHT": {
-          "$ref": "#/definitions/DfgSorgerecht"
-        },
-        "DFG-ANTRAGSART": {
-          "$ref": "#/definitions/DfgAntragsart"
-        },
+        "DFG-PSB1": { "$ref": "#/$defs/DfgPsb1" },
+        "DFG-ADRESSE": { "$ref": "#/$defs/DfgAdresse" },
+        "DFG-KONTAKT": { "$ref": "#/$defs/DfgKontakt" },
+        "DFG-KIND": { "$ref": "#/$defs/DfgKind" },
+        "DFG-KIND-ADRESSE": { "$ref": "#/$defs/DfgKindAdresse" },
+        "DFG-SORGERECHT": { "$ref": "#/$defs/DfgSorgerecht" },
+        "DFG-ANTRAGSART": { "$ref": "#/$defs/DfgAntragsart" },
+
         "DFG-NACHWEISE": {
           "type": "object",
           "additionalProperties": {
             "anyOf": [
-              {
-                "$ref": "#/definitions/DfgNachweise"
-              },
-              {
-                "type": "null"
-              }
+              { "$ref": "#/$defs/DfgNachweise" },
+              { "type": "null" }
             ]
           }
         }
@@ -76,116 +49,64 @@
       ],
       "title": "Daten"
     },
+
     "DfgAdresse": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "DF-ADR-01": {
-          "type": "string"
-        },
-        "DF-ADR-02": {
-          "type": "string"
-        },
-        "DF-ADR-03": {
-          "type": "string"
-        },
+        "DF-ADR-01": { "type": "string" },
+        "DF-ADR-02": { "type": "string" },
+        "DF-ADR-03": { "type": "string" },
+
         "DF-ADR-04": {
           "type": "string",
-          "format": "integer"
+          "pattern": "^[0-9]+$"
         },
-        "DF-ADR-05": {
-          "type": "string"
-        },
-        "DF-ADR-06": {
-          "type": "string"
-        }
+
+        "DF-ADR-05": { "type": "string" },
+        "DF-ADR-06": { "type": "string" }
       },
-      "required": [
-        "DF-ADR-01",
-        "DF-ADR-02",
-        "DF-ADR-03",
-        "DF-ADR-04",
-        "DF-ADR-05",
-        "DF-ADR-06"
-      ],
+      "required": ["DF-ADR-01", "DF-ADR-02", "DF-ADR-03", "DF-ADR-04", "DF-ADR-05", "DF-ADR-06"],
       "title": "DfgAdresse"
     },
+
     "DfgAntragsart": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "DF-ANTR-01": {
-          "type": "boolean"
-        },
-        "DF-ANTR-02": {
-          "type": "boolean"
-        },
-        "DF-ANTR-03": {
-          "type": "boolean"
-        },
-        "DF-ANTR-04": {
-          "type": "null"
-        },
-        "DF-ANTR-05": {
-          "type": "boolean"
-        },
-        "DF-ANTR-06": {
-          "type": "boolean"
-        }
+        "DF-ANTR-01": { "type": "boolean" },
+        "DF-ANTR-02": { "type": "boolean" },
+        "DF-ANTR-03": { "type": "boolean" },
+        "DF-ANTR-04": { "type": "null" },
+        "DF-ANTR-05": { "type": "boolean" },
+        "DF-ANTR-06": { "type": "boolean" }
       },
-      "required": [
-        "DF-ANTR-01",
-        "DF-ANTR-02",
-        "DF-ANTR-03",
-        "DF-ANTR-04",
-        "DF-ANTR-05",
-        "DF-ANTR-06"
-      ],
+      "required": ["DF-ANTR-01", "DF-ANTR-02", "DF-ANTR-03", "DF-ANTR-04", "DF-ANTR-05", "DF-ANTR-06"],
       "title": "DfgAntragsart"
     },
+
     "DfgKind": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "DF-KIND-01": {
-          "type": "string"
-        },
-        "DF-KIND-02": {
-          "type": "string"
-        },
-        "DF-KIND-03": {
-          "type": "string"
-        }
+        "DF-KIND-01": { "type": "string" },
+        "DF-KIND-02": { "type": "string" },
+        "DF-KIND-03": { "type": "string" }
       },
-      "required": [
-        "DF-KIND-01",
-        "DF-KIND-02",
-        "DF-KIND-03"
-      ],
+      "required": ["DF-KIND-01", "DF-KIND-02", "DF-KIND-03"],
       "title": "DfgKind"
     },
+
     "DfgKindAdresse": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "DF-ADR-KIND-01": {
-          "type": "null"
-        },
-        "DF-ADR-KIND-02": {
-          "type": "null"
-        },
-        "DF-ADR-KIND-03": {
-          "type": "null"
-        },
-        "DF-ADR-KIND-04": {
-          "type": "null"
-        },
-        "DF-ADR-KIND-05": {
-          "type": "null"
-        },
-        "DF-ADR-KIND-06": {
-          "type": "null"
-        }
+        "DF-ADR-KIND-01": { "type": "null" },
+        "DF-ADR-KIND-02": { "type": "null" },
+        "DF-ADR-KIND-03": { "type": "null" },
+        "DF-ADR-KIND-04": { "type": "null" },
+        "DF-ADR-KIND-05": { "type": "null" },
+        "DF-ADR-KIND-06": { "type": "null" }
       },
       "required": [
         "DF-ADR-KIND-01",
@@ -197,128 +118,62 @@
       ],
       "title": "DfgKindAdresse"
     },
+
     "DfgKontakt": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "DF-KON-01": {
-          "type": "string"
-        },
-        "DF-KON-02": {
-          "type": "null"
-        },
-        "DF-KON-03": {
-          "type": "string"
-        }
+        "DF-KON-01": { "type": "string" },
+        "DF-KON-02": { "type": "null" },
+        "DF-KON-03": { "type": "string" }
       },
-      "required": [
-        "DF-KON-01",
-        "DF-KON-02",
-        "DF-KON-03"
-      ],
+      "required": ["DF-KON-01", "DF-KON-02", "DF-KON-03"],
       "title": "DfgKontakt"
     },
+
     "DfgNachweise": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "dateiname": {
-          "type": "string"
-        },
-        "mimeType": {
-          "type": "string"
-        },
-        "hash": {
-          "type": "string"
-        },
-        "hashAlgorithmus": {
-          "type": "string"
-        },
-        "content": {
-          "type": "string"
-        }
+        "dateiname": { "type": "string" },
+        "mimeType": { "type": "string" },
+        "hash": { "type": "string" },
+        "hashAlgorithmus": { "type": "string" },
+        "content": { "type": "string" }
       },
-      "required": [
-        "content",
-        "dateiname",
-        "hash",
-        "hashAlgorithmus",
-        "mimeType"
-      ],
+      "required": ["content", "dateiname", "hash", "hashAlgorithmus", "mimeType"],
       "title": "DfgNachweise"
     },
+
     "DfgPsb1": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "DF-PSB1-01": {
-          "type": "string"
-        },
-        "DF-PSB1-02": {
-          "type": "string"
-        },
-        "DF-PSB1-03": {
-          "type": "string"
-        },
-        "DF-PSB1-04": {
-          "type": "string"
-        }
+        "DF-PSB1-01": { "type": "string" },
+        "DF-PSB1-02": { "type": "string" },
+        "DF-PSB1-03": { "type": "string" },
+        "DF-PSB1-04": { "type": "string" }
       },
-      "required": [
-        "DF-PSB1-01",
-        "DF-PSB1-02",
-        "DF-PSB1-03",
-        "DF-PSB1-04"
-      ],
+      "required": ["DF-PSB1-01", "DF-PSB1-02", "DF-PSB1-03", "DF-PSB1-04"],
       "title": "DfgPsb1"
     },
+
     "DfgSorgerecht": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "DF-SR-01": {
-          "type": "null"
-        },
-        "DF-SR-02": {
-          "type": "null"
-        },
-        "DF-SR-03": {
-          "type": "null"
-        },
-        "DF-SR-04": {
-          "type": "null"
-        },
-        "DF-SR-05": {
-          "type": "null"
-        },
-        "DF-SR-06": {
-          "type": "null"
-        },
-        "DF-SR-07": {
-          "type": "null"
-        },
-        "DF-SR-08": {
-          "type": "null"
-        },
-        "DF-SR-09": {
-          "type": "null"
-        },
-        "DF-SR-10": {
-          "type": "null"
-        }
+        "DF-SR-01": { "type": "null" },
+        "DF-SR-02": { "type": "null" },
+        "DF-SR-03": { "type": "null" },
+        "DF-SR-04": { "type": "null" },
+        "DF-SR-05": { "type": "null" },
+        "DF-SR-06": { "type": "null" },
+        "DF-SR-07": { "type": "null" },
+        "DF-SR-08": { "type": "null" },
+        "DF-SR-09": { "type": "null" },
+        "DF-SR-10": { "type": "null" }
       },
-      "required": [
-        "DF-SR-01",
-        "DF-SR-02",
-        "DF-SR-03",
-        "DF-SR-04",
-        "DF-SR-05",
-        "DF-SR-06",
-        "DF-SR-07",
-        "DF-SR-08",
-        "DF-SR-09",
-        "DF-SR-10"
-      ],
+      "required": ["DF-SR-01", "DF-SR-02", "DF-SR-03", "DF-SR-04", "DF-SR-05", "DF-SR-06", "DF-SR-07", "DF-SR-08", "DF-SR-09", "DF-SR-10"],
       "title": "DfgSorgerecht"
     }
   }
